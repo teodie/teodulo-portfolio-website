@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 :root {
   --background: #ffffff;
@@ -9,4 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --font-rondbox: var(--font-rondbox), sans-serif;
+  --font-ovo: var(--font-ovo), serif;
+  --font-outfit: var(--font-outfit);
 }
