@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local"
-import { Outfit, Ovo } from "next/font/google"
+import { Outfit, Ovo, Inter } from "next/font/google"
 
 export const rondbox = localFont({
   src: '../assets/fonts/RondBox-Regular.woff2',
@@ -15,6 +15,14 @@ export const ovo = Ovo({
   variable: '--font-ovo',
   display: 'swap'
 })
+
+export const inter = Inter({
+  weight: ['400', '500', '600'],
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap'
+})
+
 
 export const outfit = Outfit({
   weight: ['400', '500', '600'],
@@ -34,8 +42,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${rondbox.variable} ${ovo.variable} ${outfit.variable} antialiased`} >
+    <html lang="en" className="scroll-smooth dark">
+      <body className={`${rondbox.variable} ${ovo.variable} ${outfit.variable} ${inter.variable} dark:bg-foreground dark:text-background antialiased`} >
         {children}
       </body>
     </html>
