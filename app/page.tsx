@@ -1,5 +1,5 @@
 'use client'
-import Nav from "@/components/Nav";
+import NavBAr from "@/components/NavBar";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <Nav isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
+      <NavBAr isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
     </>
   );
 }

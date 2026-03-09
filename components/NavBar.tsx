@@ -6,7 +6,7 @@ type NavPropType = {
   setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const Nav = ({isDarkMode, setIsDarkMode}: NavPropType) => {
+const NavBAr = ({isDarkMode, setIsDarkMode}: NavPropType) => {
   return (
     <nav className='flex flex-row justify-between items-center h-12 px-5 border border-black'>
       <a href="#" target="_blank" rel="noopener noreferrer" className='font-rondbox text-4xl tracking-[3px]'>Teodi</a>
@@ -41,4 +41,4 @@ export const Nav = ({isDarkMode, setIsDarkMode}: NavPropType) => {
   )
 }
 
-export default Nav
+export default NavBAr
