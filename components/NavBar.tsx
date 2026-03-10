@@ -1,5 +1,6 @@
 import React from 'react'
-import { Moon, Sun } from 'lucide-react'
+import { Menu, X, Moon, Sun } from 'lucide-react'
+import { useMenu } from '@/utils/ThemeContext'
 
 type NavPropType = {
   isDarkMode: boolean,
@@ -7,27 +8,33 @@ type NavPropType = {
 }
 
 const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
+  const { showMenu, setShowMenu } = useMenu()
+
   return (
-      <nav className='flex flex-row justify-between items-center h-12 px-5 '>
-        <a href="#" target="_blank" rel="noopener noreferrer" className='font-rondbox text-4xl tracking-[3px]'>Teodi</a>
+    <nav className='flex flex-row justify-between items-center h-12 px-5 border border-black'>
+      <a href="#" target="_blank" rel="noopener noreferrer" className='font-rondbox text-4xl tracking-[3px]'>Teodi</a>
 
-        <ul
-          className={`flex flex-row h-4/5 border-[1.5px] rounded-full ${isDarkMode ? ' border-white' : 'border-black'}`}
-        >
-          <a href="#" className='flex flex-1 items-center px-5 rounded-l-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500' >
-            <li className='font-inter text-sm font-medium'>Home</li>
-          </a>
-          <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-            <li className='font-inter text-sm font-medium'>About</li>
-          </a>
-          <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-            <li className='font-inter text-sm font-medium'>Blog</li>
-          </a>
-          <a href="#" className='flex flex-1 items-center px-5 rounded-r-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-            <li className='font-inter text-sm font-medium'>Contact</li>
-          </a>
-        </ul>
+      <ul
+        className={`
+          h-4/5 border-[1.5px] rounded-full hidden ${isDarkMode ? ' border-white' : 'border-black'}
+          sm:flex sm:flex-row
+          `}
+      >
+        <a href="#top" className='flex flex-1 items-center px-5 rounded-l-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>Home</li>
+        </a>
+        <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>About</li>
+        </a>
+        <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>Blog</li>
+        </a>
+        <a href="#" className='flex flex-1 items-center px-5 rounded-r-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>Contact</li>
+        </a>
+      </ul>
 
+      <div className='flex flex-row'>
         <div
           className='p-1.25 rounded-full hover:bg-gray-300 cursor-pointer duration-300 dark:hover:bg-mist-500'
           onClick={() => {
@@ -39,7 +46,40 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
               : <Sun color='black' size={20} />
           }
         </div>
-      </nav>
+
+        <div
+          className='p-1.25 cursor-pointer sm:hidden'
+          onClick={() => {
+            setShowMenu(true)
+          }}>
+          <Menu color={isDarkMode ? 'white' : 'black'} size={20} />
+        </div>
+      </div>
+
+      <ul
+        className={`fixed flex flex-col gap-5 bg-white dark:bg-lighter shadow-lg right-0 top-0 min-h-screen min-w-64 sm:hidden ${!showMenu && 'translate-x-64'} transform transition-transform duration-500 ease-in-out`}
+      >
+        <button className='self-end m-4'
+          onClick={() => {
+            setShowMenu(false)
+          }}>
+          <X color={isDarkMode ? 'white' : 'black'} size={20} />
+        </button>
+        <a href="#top" className='items-center px-5 rounded-l-full duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>Home</li>
+        </a>
+        <a href="#" className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>About</li>
+        </a>
+        <a href="#" className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>Blog</li>
+        </a>
+        <a href="#" className=' items-center px-5 rounded-r-full duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>Contact</li>
+        </a>
+      </ul>
+
+    </nav>
 
 
   )

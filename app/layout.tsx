@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local"
 import { Outfit, Ovo, Inter } from "next/font/google"
+import MenuProvider from "@/utils/ThemeContext";
 
 export const rondbox = localFont({
   src: '../assets/fonts/RondBox-Regular.woff2',
@@ -44,7 +45,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth dark">
       <body className={`${rondbox.variable} ${ovo.variable} ${outfit.variable} ${inter.variable} dark:bg-foreground dark:text-background antialiased`} >
-        {children}
+        <MenuProvider>
+          {children}
+        </MenuProvider>
       </body>
     </html>
   );
