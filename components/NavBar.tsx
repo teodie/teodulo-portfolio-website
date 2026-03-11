@@ -11,12 +11,12 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
   const { showMenu, setShowMenu } = useMenu()
 
   return (
-    <nav className='flex flex-row justify-between items-center h-12 px-5 border border-black'>
+    <nav className='flex flex-row justify-between items-center h-12 px-5 my-5'>
       <a href="#" target="_blank" rel="noopener noreferrer" className='font-rondbox text-4xl tracking-[3px]'>Teodi</a>
 
       <ul
         className={`
-          h-4/5 border-[1.5px] rounded-full hidden ${isDarkMode ? ' border-white' : 'border-black'}
+          h-4/5 rounded-full hidden shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-indigo-950/50 dark:text-zinc-200 dark:ring-white/10
           sm:flex sm:flex-row
           `}
       >
@@ -27,7 +27,7 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
           <li className='font-inter text-sm font-medium'>About</li>
         </a>
         <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Blog</li>
+          <li className='font-inter text-sm font-medium'>Articles</li>
         </a>
         <a href="#" className='flex flex-1 items-center px-5 rounded-r-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
           <li className='font-inter text-sm font-medium'>Contact</li>
