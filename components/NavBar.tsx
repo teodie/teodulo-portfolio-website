@@ -57,7 +57,7 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
       </div>
 
       <ul
-        className={`fixed flex flex-col gap-5 bg-white dark:bg-lighter shadow-lg right-0 top-0 min-h-screen min-w-64 sm:hidden ${!showMenu && 'translate-x-64'} transform transition-transform duration-500 ease-in-out`}
+        className={`fixed flex flex-col gap-5 bg-white dark:bg-mobile-nav shadow-lg right-0 top-0 min-h-screen min-w-64 sm:hidden ${!showMenu && 'translate-x-64'} transform transition-transform duration-500 ease-in-out`}
       >
         <button className='self-end m-4'
           onClick={() => {
