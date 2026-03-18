@@ -14,7 +14,7 @@ const Header = () => {
 
       <div className='e flex flex-col w-56 md:w-3xl items-center'>
 
-        <div className='flex flex-row gap-2 items-center'>
+        <div className='flex flex-row gap-2 items-center mt-8'>
           <div>
             <Image alt='left profile' src={profile.left} />
           </div>
