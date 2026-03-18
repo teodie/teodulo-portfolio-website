@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth dark">
-      <body className={`${rondbox.variable} ${ovo.variable} ${outfit.variable} ${inter.variable} dark:bg-foreground dark:text-background antialiased`} >
+      <body className={`${rondbox.variable} ${ovo.variable} ${outfit.variable} ${inter.variable} dark:bg-foreground dark:text-background antialiased  h-dvh `} >
         <MenuProvider>
           {children}
         </MenuProvider>

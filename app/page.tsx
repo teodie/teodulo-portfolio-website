@@ -1,11 +1,10 @@
 'use client'
 import NavBAr from "@/components/NavBar";
 import { useEffect, useState } from "react";
-import MenuProvider, { useMenu } from "@/utils/ThemeContext";
+import Header from "@/components/Header";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
-
 
   useEffect(() => {
     if (localStorage.theme === "dark" || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme)').matches)) {
@@ -29,6 +28,7 @@ export default function Home() {
   return (
     <>
       <NavBAr isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+      <Header />
     </>
   );
 }

@@ -11,7 +11,7 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
   const { showMenu, setShowMenu } = useMenu()
 
   return (
-    <nav className='flex flex-row justify-between items-center h-12 px-5 my-5'>
+    <nav className='flex flex-row justify-between items-center h-12 px-5 mt-5 z-50 '>
       <a href="#" target="_blank" rel="noopener noreferrer" className='font-rondbox text-4xl tracking-[3px]'>Teodi</a>
 
       <ul
@@ -29,8 +29,11 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
         <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
           <li className='font-inter text-sm font-medium'>Articles</li>
         </a>
+        <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>Projects</li>
+        </a>
         <a href="#" className='flex flex-1 items-center px-5 rounded-r-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Contact</li>
+          <li className='font-inter text-sm font-medium'>Works</li>
         </a>
       </ul>
 
@@ -75,7 +78,10 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
           <li className='font-inter text-sm font-medium'>Blog</li>
         </a>
         <a href="#" className=' items-center px-5 rounded-r-full duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Contact</li>
+          <li className='font-inter text-sm font-medium'>Projects</li>
+        </a>
+        <a href="#" className=' items-center px-5 rounded-r-full duration-500 dark:hover:bg-mist-500'>
+          <li className='font-inter text-sm font-medium'>Works</li>
         </a>
       </ul>
 
