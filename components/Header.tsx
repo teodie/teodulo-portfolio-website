@@ -16,13 +16,13 @@ const Header = () => {
 
         <div className='flex flex-row gap-2 items-center mt-8'>
           <div>
-            <Image alt='left profile' src={profile.left} />
+            <Image alt='left profile' src={profile.left} priority />
           </div>
           <div>
-            <Image alt='middle profile' src={profile.middle} />
+            <Image alt='middle profile' src={profile.middle} priority />
           </div>
           <div>
-            <Image alt='right profile' src={profile.right} />
+            <Image alt='right profile' src={profile.right} priority/>
           </div>
         </div>
 

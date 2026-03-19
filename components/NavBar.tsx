@@ -20,21 +20,21 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
           sm:flex sm:flex-row
           `}
       >
-        <a href="#top" className='flex flex-1 items-center px-5 rounded-l-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Home</li>
-        </a>
-        <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>About</li>
-        </a>
-        <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Articles</li>
-        </a>
-        <a href="#" className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Projects</li>
-        </a>
-        <a href="#" className='flex flex-1 items-center px-5 rounded-r-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Works</li>
-        </a>
+        <li className='flex flex-1 items-center px-5 rounded-l-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <a href="#top" className='font-inter text-sm font-medium' >Home</a>
+        </li>
+        <li className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <a href="#" className='font-inter text-sm font-medium'>About</a>
+        </li>
+        <li className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <a href="#" className='font-inter text-sm font-medium'>Articles</a>
+        </li>
+        <li className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <a href="#" className='font-inter text-sm font-medium'>Projects</a>
+        </li>
+        <li className='flex flex-1 items-center px-5 rounded-r-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
+          <a href="#" className='font-inter text-sm font-medium'>Works</a>
+        </li>
       </ul>
 
       <div className='flex flex-row'>
