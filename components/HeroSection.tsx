@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { icons, profile } from '@/assets/assets'
 
-const Header = () => {
+const HeroSection = () => {
   return (
     <div id='#home' className='px-[5%]  flex flex-col-reverse items-center gap-5 text-center
     md:flex-row md:h-full md:gap-0 md:text-start md:justify-between
@@ -46,4 +46,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default HeroSection

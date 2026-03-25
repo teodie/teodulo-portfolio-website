@@ -1,7 +1,7 @@
 'use client'
 import NavBAr from "@/components/NavBar";
 import { useEffect, useState } from "react";
-import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       <NavBAr isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      <Header />
+      <HeroSection />
     </>
   );
 }
