@@ -9,6 +9,7 @@ type NavPropType = {
 
 const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
   const { showMenu, setShowMenu } = useMenu()
+  const menu = ["Home", "About", "Articles", "Projects", "Works"]
 
   return (
     <nav className='flex flex-row justify-between items-center h-12 px-5 mt-5 z-50 '>
@@ -20,22 +21,16 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
           sm:flex sm:flex-row
           `}
       >
-        <li className='flex flex-1 items-center px-5 rounded-l-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <a href="#top" className='font-inter text-sm font-medium' >Home</a>
-        </li>
-        <li className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <a href="#" className='font-inter text-sm font-medium'>About</a>
-        </li>
-        <li className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <a href="#" className='font-inter text-sm font-medium'>Articles</a>
-        </li>
-        <li className='flex flex-1 items-center px-5 hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <a href="#" className='font-inter text-sm font-medium'>Projects</a>
-        </li>
-        <li className='flex flex-1 items-center px-5 rounded-r-full hover:bg-gray-300 duration-500 dark:hover:bg-mist-500'>
-          <a href="#" className='font-inter text-sm font-medium'>Works</a>
-        </li>
+        {
+          menu.map((item) => (
+            <li className='flex flex-1 items-center px-5 hover:text-blue-600 duration-500'>
+              <a href="#top" className='font-inter text-sm font-medium' >{item}</a>
+            </li>
+          ))
+        }
       </ul>
+
+
 
       <div className='flex flex-row'>
         <div
