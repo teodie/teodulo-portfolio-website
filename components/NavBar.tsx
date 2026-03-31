@@ -84,19 +84,19 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
           }}>
           <X color={isDarkMode ? 'white' : 'black'} size={20} />
         </button>
-        <a href="#top" className='items-center px-5 rounded-l-full duration-500 dark:hover:bg-mist-500'>
+        <a href="#top" onClick={()=>{setShowMenu(false)}} className='items-center px-5 rounded-l-full duration-500 dark:hover:bg-mist-500'>
           <li className='font-inter text-sm font-medium'>Home</li>
         </a>
-        <a href="#about" className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
+        <a href="#about" onClick={()=>{setShowMenu(false)}}className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
           <li className='font-inter text-sm font-medium'>About</li>
         </a>
-        <a href="#" className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
+        <a href="#" onClick={()=>{setShowMenu(false)}} className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
           <li className='font-inter text-sm font-medium'>Blog</li>
         </a>
-        <a href="#" className=' items-center px-5 rounded-r-full duration-500 dark:hover:bg-mist-500'>
+        <a href="#" onClick={()=>{setShowMenu(false)}} className=' items-center px-5 rounded-r-full duration-500 dark:hover:bg-mist-500'>
           <li className='font-inter text-sm font-medium'>Projects</li>
         </a>
-        <a href="#" className=' items-center px-5 rounded-r-full duration-500 dark:hover:bg-mist-500'>
+        <a href="#" onClick={()=>{setShowMenu(false)}} className=' items-center px-5 rounded-r-full duration-500 dark:hover:bg-mist-500'>
           <li className='font-inter text-sm font-medium'>Works</li>
         </a>
       </ul>
