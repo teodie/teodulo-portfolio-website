@@ -11,7 +11,15 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
   const { showMenu, setShowMenu } = useMenu()
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const menu = ["Home", "About", "Articles", "Projects", "Works"]
+  const menuxx = ["Home", "About", "Articles", "Projects", "Works"]
+
+  const menu = [
+    {name: 'Home', id : '#top'},
+    {name: 'About', id : '#about'},
+    {name: 'Articles', id : '#articles'},
+    {name: 'Projects', id : '#projects'},
+    {name: 'Works', id : '#works'},
+  ]
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -36,8 +44,8 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
       >
         {
           menu.map((item) => (
-            <li key={item} className='flex flex-1 items-center px-5 hover:text-blue-600 duration-500'>
-              <a href="#top" className='text-sm font-medium' >{item}</a>
+            <li key={item.name} className='flex flex-1 items-center px-5 hover:text-blue-600 duration-500'>
+              <a href={item.id} className='text-sm font-medium' >{item.name}</a>
             </li>
           ))
         }
@@ -79,7 +87,7 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
         <a href="#top" className='items-center px-5 rounded-l-full duration-500 dark:hover:bg-mist-500'>
           <li className='font-inter text-sm font-medium'>Home</li>
         </a>
-        <a href="#" className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
+        <a href="#about" className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
           <li className='font-inter text-sm font-medium'>About</li>
         </a>
         <a href="#" className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
