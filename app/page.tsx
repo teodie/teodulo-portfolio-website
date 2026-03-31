@@ -2,6 +2,7 @@
 import NavBAr from "@/components/NavBar";
 import { useEffect, useState } from "react";
 import HeroSection from "@/components/HeroSection";
+import About from "@/components/About";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
@@ -29,6 +30,7 @@ export default function Home() {
     <>
       <NavBAr isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <HeroSection />
+      <About />
     </>
   );
 }

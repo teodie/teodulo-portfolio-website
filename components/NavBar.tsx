@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 import { useMenu } from '@/utils/ThemeContext'
 
@@ -9,22 +9,35 @@ type NavPropType = {
 
 const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
   const { showMenu, setShowMenu } = useMenu()
+  const [isScrolled, setIsScrolled] = useState(false)
+
   const menu = ["Home", "About", "Articles", "Projects", "Works"]
 
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if( scrollY > 50){
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    })
+  }, [])
+
   return (
-    <nav className='flex flex-row justify-between items-center h-12 px-5 mt-5 z-50 '>
+    <nav className={`fixed flex w-full flex-row justify-between items-center px-5 py-2 md:py-4 z-50 
+  ${isScrolled && 'dark:bg-slate-900/70 bg-white/70 backdrop-blur-md border-b border-white/20 '}`}>
       <a href="#" target="_blank" rel="noopener noreferrer" className='font-rondbox text-4xl tracking-[3px]'>Teodi</a>
 
       <ul
         className={`
-          h-4/5 rounded-full hidden shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-indigo-950/50 dark:text-zinc-200 dark:ring-white/10
+          h-12 rounded-full font-inter hidden shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:bg-indigo-950/50 dark:text-zinc-200 dark:ring-white/10
           sm:flex sm:flex-row
           `}
       >
         {
           menu.map((item) => (
-            <li className='flex flex-1 items-center px-5 hover:text-blue-600 duration-500'>
-              <a href="#top" className='font-inter text-sm font-medium' >{item}</a>
+            <li key={item} className='flex flex-1 items-center px-5 hover:text-blue-600 duration-500'>
+              <a href="#top" className='text-sm font-medium' >{item}</a>
             </li>
           ))
         }
