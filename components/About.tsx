@@ -4,7 +4,7 @@ import myphoto from '@/assets/images/teodulo.png'
 
 function About() {
   return (
-    <div id='about' className='px-10'>
+    <div id='about' className='px-10 scroll-mt-25'>
       <h3 className='text-center text-2xl font-bold font-ovo my-20'>About me</h3>
       <div className='grid grid-cols-1 my-10 md:grid-cols-2'>
 

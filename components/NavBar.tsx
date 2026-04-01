@@ -14,16 +14,16 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
   const menuxx = ["Home", "About", "Articles", "Projects", "Works"]
 
   const menu = [
-    {name: 'Home', id : '#top'},
-    {name: 'About', id : '#about'},
-    {name: 'Articles', id : '#articles'},
-    {name: 'Projects', id : '#projects'},
-    {name: 'Works', id : '#works'},
+    { name: 'Home', id: '#top' },
+    { name: 'About', id: '#about' },
+    { name: 'Articles', id: '#articles' },
+    { name: 'Projects', id: '#projects' },
+    { name: 'Works', id: '#works' },
   ]
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if( scrollY > 50){
+      if (scrollY > 50) {
         setIsScrolled(true)
       } else {
         setIsScrolled(false)
@@ -75,6 +75,7 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
         </div>
       </div>
 
+      {/* ------------------ Menu for mobile screens ------------- */}
       <ul
         className={`fixed flex flex-col gap-5 bg-white dark:bg-mobile-nav shadow-lg right-0 top-0 min-h-screen min-w-64 sm:hidden ${!showMenu && 'translate-x-64'} transform transition-transform duration-500 ease-in-out`}
       >
@@ -84,21 +85,16 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
           }}>
           <X color={isDarkMode ? 'white' : 'black'} size={20} />
         </button>
-        <a href="#top" onClick={()=>{setShowMenu(false)}} className='items-center px-5 rounded-l-full duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Home</li>
-        </a>
-        <a href="#about" onClick={()=>{setShowMenu(false)}}className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>About</li>
-        </a>
-        <a href="#" onClick={()=>{setShowMenu(false)}} className=' items-center px-5 duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Blog</li>
-        </a>
-        <a href="#" onClick={()=>{setShowMenu(false)}} className=' items-center px-5 rounded-r-full duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Projects</li>
-        </a>
-        <a href="#" onClick={()=>{setShowMenu(false)}} className=' items-center px-5 rounded-r-full duration-500 dark:hover:bg-mist-500'>
-          <li className='font-inter text-sm font-medium'>Works</li>
-        </a>
+
+        {
+          menu.map((menu) => (
+            <li key={menu.id} className='items-center px-5 rounded-l-full duration-500 dark:hover:bg-mist-500'>
+              <a href={menu.id} onClick={() => { setShowMenu(false) }} className='font-inter text-sm font-medium'>{menu.name}</a>
+            </li>
+          ))
+        }
+
+
       </ul>
 
     </nav>
