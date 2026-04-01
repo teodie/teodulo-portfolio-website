@@ -9,9 +9,9 @@ function About() {
       <div className='grid grid-cols-1 my-10 md:grid-cols-2'>
 
 
-        <div className='text-xl space-y-5 order-2 md:order-1'>
+        <div className='text-xl space-y-7 order-2 md:order-1'>
 
-          <h2 className='font-extrabold text-4xl lg:text-6xl font-outfit mb-4'>I'm Teodulo Soriano I leave in the philippines, where I create, design and implement practical solutions.</h2>
+          <h2 className='font-extrabold text-4xl lg:text-6xl font-outfit'>I'm Teodulo Soriano. I leave in the philippines, where I implement practical solutions.</h2>
 
           <p>I have a Degree in Computer Engineering which also means that my neighbors think that I can repair their broken device and appliances. One time I fix a fridge with a wire chewed through by the rats and earn 400 pesos or $8 by just reconnecting the wires.</p>
 

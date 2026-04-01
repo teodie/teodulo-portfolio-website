@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 import { useMenu } from '@/utils/ThemeContext'
+import Image from 'next/image'
+import myphoto from '@/assets/images/teodieicon.png'
 
 type NavPropType = {
   isDarkMode: boolean,
@@ -34,6 +36,7 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
   return (
     <nav className={`fixed flex w-full flex-row justify-between items-center px-5 py-2 md:py-4 z-50 
   ${isScrolled && 'dark:bg-slate-900/70 bg-white/70 backdrop-blur-md border-b border-white/20 '}`}>
+
       <a href="#" target="_blank" rel="noopener noreferrer" className='font-rondbox text-4xl tracking-[3px]'>Teodi</a>
 
       <ul
