@@ -4,14 +4,14 @@ import myphoto from '@/assets/images/teodulo.png'
 
 function About() {
   return (
-    <div id='about' className='px-10 scroll-mt-25'>
-      <h3 className='text-center text-2xl font-bold font-ovo my-20'>About me</h3>
-      <div className='grid grid-cols-1 my-10 md:grid-cols-2'>
+    <div id='about' className='px-10 scroll-mt-16 lg:scroll-mt-25'>
+      <h3 className='text-center text-2xl font-bold font-ovo mt-20 md:my-20'>About me</h3>
+      <div className='grid grid-cols-1 md:my-10 md:grid-cols-2'>
 
 
         <div className='text-xl space-y-7 order-2 md:order-1'>
 
-          <h2 className='font-extrabold text-4xl lg:text-6xl font-outfit'>I'm Teodulo Soriano. I leave in the philippines, where I implement practical solutions.</h2>
+          <h2 className='font-extrabold text-3xl lg:text-6xl font-outfit'>I'm Teodulo Soriano. I leave in the philippines, where I implement practical solutions.</h2>
 
           <p>I have a Degree in Computer Engineering which also means that my neighbors think that I can repair their broken device and appliances. One time I fix a fridge with a wire chewed through by the rats and earn 400 pesos or $8 by just reconnecting the wires.</p>
 
