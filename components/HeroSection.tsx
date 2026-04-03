@@ -3,8 +3,8 @@ import { icons, profile } from '@/assets/assets'
 
 const HeroSection = () => {
   return (
-    <div id='#home' className='px-[5%]  flex flex-col-reverse items-center gap-5 text-center pt-10
-    md:flex-row md:h-full md:gap-0 md:text-start md:justify-between
+    <div id='#home' className='px-10 flex flex-col-reverse items-center gap-5 text-center pt-10
+    md:flex-row md:h-full md:gap-0 md:text-start md:justify-between max-w-8xl mx-auto
     '>
 
       <div className='pr-5  w-full '>

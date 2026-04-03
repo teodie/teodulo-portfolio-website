@@ -47,8 +47,8 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
       >
         {
           menu.map((item) => (
-            <li key={item.name} className='flex flex-1 items-center px-5 hover:text-blue-600 duration-500'>
-              <a href={item.id} className='text-sm font-medium' >{item.name}</a>
+            <li key={item.name} className='flex flex-1 items-center px-5 0'>
+              <a href={item.id} className='text-sm font-medium hover:text-blue-600 duration-50' >{item.name}</a>
             </li>
           ))
         }
