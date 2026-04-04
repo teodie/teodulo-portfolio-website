@@ -53,7 +53,7 @@ function Articles() {
 
       </div>
       <div className='text-center items-center mt-10 pb-20'>
-        <a href="" className=' dark:bg-cyan-800 px-10 py-4 rounded-full inline-block text-xl font-semibold border-stone-900 darK:border-gray-400 border-[.01rem] dark:hover:bg-cyan-700'>View all</a>
+        <a href="" className=' dark:bg-amber-600 px-10 py-4 rounded-full inline-block text-xl font-semibold border-stone-900 darK:border-gray-300 border-[.08rem] dark:hover:bg-amber-500'>View all</a>
       </div>
 
     </section>

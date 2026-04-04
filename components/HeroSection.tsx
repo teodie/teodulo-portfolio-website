@@ -4,10 +4,14 @@ import { quoates } from '@/utils/BookQuotes'
 import { useEffect, useState } from 'react'
 
 const HeroSection = () => {
-    const [quoateIndex, setQuoateIndex] = useState(0)
+  const [quoateIndex, setQuoateIndex] = useState(0)
 
+  const generateRandomNumberUpTo = (max : number) => {
+    return Math.floor(Math.random() * max)
+  }
   useEffect(() => {
-    const randomNumber = Math.floor( Math.random()  * quoates.length )
+    const maxIndex = quoates.length
+    const randomNumber = generateRandomNumberUpTo(maxIndex)
     setQuoateIndex(randomNumber)
   }, [])
 
@@ -34,7 +38,7 @@ const HeroSection = () => {
             <Image alt='middle profile' src={profile.middle} priority />
           </div>
           <div>
-            <Image alt='right profile' src={profile.right} priority/>
+            <Image alt='right profile' src={profile.right} priority />
           </div>
         </div>
 
@@ -43,7 +47,7 @@ const HeroSection = () => {
             <Image alt='linkedin' src={icons.linkedin} width={50} />
           </div>
           <div>
-            <Image alt='github' src={icons.github} width={50} />       
+            <Image alt='github' src={icons.github} width={50} />
           </div>
           <div>
             <Image alt='instagram' src={icons.instagram} width={50} />

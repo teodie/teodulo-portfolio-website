@@ -14,7 +14,7 @@ export const quoates = [
   },
   {
     BookTitle: "Grit",
-    quoate: "Superlative performance is really a confluence of dozens small skills or activities, each one learned or stumbled upon, which have been carefully drilled into a habit and are fitted together in a synthesized whole.",
+    quoate: "Superlative performance is really a confluence of dozens small skills or activities, each one learned or stumbled upon, which have been carefully drilled into a habit and then are fitted together in a synthesized whole.",
     pageNumber: 32,
     BookAuthor: "Angela Duckworth"
   }
