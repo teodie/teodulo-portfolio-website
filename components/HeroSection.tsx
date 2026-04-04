@@ -18,8 +18,10 @@ const HeroSection = () => {
 
       <div className='pr-5  w-full '>
         <h1 className='text-2xl md:text-5xl mb-3 font-ovo'>{quoates[quoateIndex].quoate}</h1>
-        <strong className='text-xs font-bold md:text-2xl'>{`- ${quoates[quoateIndex].BookTitle}`}</strong>
-        <p className='text-xs md:text-2xl inline ml-5'>{`by ${quoates[quoateIndex].BookAuthor}`}</p>
+        <div className='text-xs md:text-2xl text-gray-500 dark:text-gray-300'>
+          <strong className='font-bold'>{`- ${quoates[quoateIndex].BookTitle}`}</strong>
+          <p>{`by ${quoates[quoateIndex].BookAuthor}`}</p>
+        </div>
       </div>
 
       <div className='e flex flex-col w-56 md:w-3xl items-center'>
