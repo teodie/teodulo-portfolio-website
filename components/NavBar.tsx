@@ -52,7 +52,7 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
                 {
                   item.name === "Projects" && <div className='size-3 bg-amber-600 rounded-full mr-1 ' />
                 }
-                <a href={item.id} className='text-sm font-medium hover:text-amber-500 duration-50' >{item.name}</a>
+                <a href={item.id} className='text-sm font-medium hover:text-amber-500 transition-colors' >{item.name}</a>
               </div>
             </li>
           ))
