@@ -1,15 +1,25 @@
 import Image from 'next/image'
 import { icons, profile } from '@/assets/assets'
+import { quoates } from '@/utils/BookQuotes'
+import { useEffect, useState } from 'react'
 
 const HeroSection = () => {
+    const [quoateIndex, setQuoateIndex] = useState(0)
+
+  useEffect(() => {
+    const randomNumber = Math.floor( Math.random()  * quoates.length )
+    setQuoateIndex(randomNumber)
+  }, [])
+
   return (
     <div id='#home' className='px-10 flex flex-col-reverse items-center gap-5 text-center pt-10
-    md:flex-row md:h-full md:gap-0 md:text-start md:justify-between max-w-8xl mx-auto
+    md:flex-row md:h-full md:gap-0 md:text-start md:justify-between max-w-400 mx-auto
     '>
 
       <div className='pr-5  w-full '>
-        <h1 className='text-2xl md:text-5xl mb-3 font-ovo'>Consider everything... but take nothing as a gospel.</h1>
-        <h3 className='text-xs md:text-2xl'>- The Almanack of Naval Ravikant</h3>
+        <h1 className='text-2xl md:text-5xl mb-3 font-ovo'>{quoates[quoateIndex].quoate}</h1>
+        <strong className='text-xs font-bold md:text-2xl'>{`- ${quoates[quoateIndex].BookTitle}`}</strong>
+        <p className='text-xs md:text-2xl inline ml-5'>{`by ${quoates[quoateIndex].BookAuthor}`}</p>
       </div>
 
       <div className='e flex flex-col w-56 md:w-3xl items-center'>

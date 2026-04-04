@@ -7,7 +7,7 @@ import { ClockFading } from 'lucide-react'
 
 function Articles() {
   return (
-    <section id='articles' className='px-10 scroll-mt-24 max-w-8xl mx-auto'>
+    <section id='articles' className='px-10 scroll-mt-24 max-w-400 mx-auto'>
       <h2 className='text-2xl text-center font-bold font-ovo mt-20'>My Writtings</h2>
 
       <p className='text-lg text-center mt-5 lg:text-2xl lg:mt-10'>I write mostly about the things I found interesting, things that I am currently learning and my realization in life.</p>
