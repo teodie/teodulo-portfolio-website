@@ -16,12 +16,12 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <div id='#home' className='px-10 flex flex-col-reverse items-center gap-5 text-center pt-10
+    <div id='#home' className='px-10 flex flex-col-reverse items-center gap-5 text-center pt-10 md:pt-20
     md:flex-row md:h-full md:gap-0 md:text-start md:justify-between max-w-400 mx-auto
     '>
 
       <div className='pr-5  w-full '>
-        <h1 className='text-2xl md:text-5xl mb-3 font-ovo'>{quoates[quoateIndex].quoate}</h1>
+        <h1 className='text-2xl md:text-4xl lg:text-5xl mb-3 font-ovo'>{quoates[quoateIndex].quoate}</h1>
         <div className='text-xs md:text-2xl text-gray-500 dark:text-gray-300'>
           <strong className='font-bold'>{`- ${quoates[quoateIndex].BookTitle}`}</strong>
           <p>{`by ${quoates[quoateIndex].BookAuthor}`}</p>
