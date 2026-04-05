@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import About from "@/components/About";
 import Articles from "@/components/Articles";
+import Projects from "@/components/Projects";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
@@ -33,6 +34,7 @@ export default function Home() {
       <HeroSection />
       <About />
       <Articles />
+      <Projects />
     </>
   );
 }
