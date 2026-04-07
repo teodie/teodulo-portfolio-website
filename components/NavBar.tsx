@@ -13,14 +13,11 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
   const { showMenu, setShowMenu } = useMenu()
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const menuxx = ["Home", "About", "Articles", "Projects", "Works"]
-
   const menu = [
     { name: 'Home', id: '#top' },
     { name: 'About', id: '#about' },
     { name: 'Articles', id: '#articles' },
     { name: 'Projects', id: '#projects' },
-    { name: 'Works', id: '#works' },
   ]
 
   useEffect(() => {

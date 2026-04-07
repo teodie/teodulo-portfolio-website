@@ -3,9 +3,16 @@
 :root {
   --background: #ffffff;
   --foreground: #020617;
+
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@utility gradient-circle {
+  background: 
+  radial-gradient(circle at 18% 18%,rgba(255,255,255,0.78) 0px, rgba(255,255,255,0) 34%),
+  linear-gradient(135deg, rgb(248,255,242) 0%,rgb(215,244,200) 46%,rgb(136,207,141) 100%)
+}
 
 @theme inline {
   --breakpoint-xs: 370px;
