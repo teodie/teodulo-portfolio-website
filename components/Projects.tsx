@@ -46,18 +46,18 @@ const Projects = () => {
 
           <div className="absolute inset-0 flex items-center justify-center">
             <img
-              src="/App_Leftoverchef.svg"
-              alt="LeftOverChef"
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" draggable="false" />
+              src="/vendomon.png"
+              alt="VendoMon"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04] object-top-left" draggable="false" />
           </div>
 
           <div className="pointer-events-none absolute inset-0 bg-linear-to-b from-black/40 via-black/5 to-transparent">
           </div>
 
           <div className="absolute left-5 top-5">
-            <span className="inline-block text-[11px] font-semibold text-white/80"> iOS App </span>
-            <p className="mt-1 font-acorn text-[22px] font-semibold leading-[1.15] text-white drop-shadow-sm md:text-[26px]">LeftOverChef </p>
-            <p className="mt-0.5 text-[13px] text-white/70">Recipes from what's in your fridge</p>
+            <span className="inline-block text-[11px] font-semibold text-white/80"> React Native </span>
+            <p className="mt-1 font-acorn text-[22px] font-semibold leading-[1.15] text-white drop-shadow-sm md:text-[26px]">VendoMon </p>
+            <p className="mt-0.5 text-[13px] text-white/70">Machine sales and status reporting</p>
           </div>
 
           <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/0 transition-all duration-300 group-hover:ring-white/15">
