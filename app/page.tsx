@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import About from "@/components/About";
 import Articles from "@/components/Articles";
 import Projects from "@/components/Projects";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
@@ -35,6 +36,7 @@ export default function Home() {
       <About />
       <Articles />
       <Projects />
+      <Footer />
     </>
   );
 }
