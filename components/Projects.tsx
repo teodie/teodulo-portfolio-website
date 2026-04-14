@@ -19,7 +19,7 @@ const Projects = () => {
   }
 
   return (
-    <section id='projects' className='px-10 scroll-mt-24 max-w-400 mx-auto pb-[50vh]'>
+    <section id='projects' className='px-10 scroll-mt-24 max-w-400 mx-auto '>
       <h2 className='text-2xl text-center font-bold font-ovo mt-20 mb-20'>Projects</h2>
 
       <div className="grid grid-cols-5 gap-5">
@@ -76,9 +76,7 @@ const Projects = () => {
         </div>
 
         <div className='h-125 col-span-5 group relative md:col-span-2 rounded-2xl overflow-hidden'>
-          {/* <div className='gradient-circle absolute inset-0 '>
-            <img className='group-hover:scale-[1.03] transition-transform duration-300' src="/App_Leftoverchef.svg" alt="Lista App Image" />
-          </div> */}
+
 
           <div className='absolute inset-0 bg-linear-to-b from-black/40 via-black/5 to-transparent' />
 

@@ -15,11 +15,15 @@ function About() {
 
           <h2 className='font-extrabold text-3xl lg:text-6xl font-outfit'>I'm Teodulo Soriano. I leave in the philippines, where I implement practical solutions.</h2>
 
-          <p>I have a Degree in Computer Engineering which also means that my neighbors think that I can repair their broken device and appliances. One time I fix a fridge with a wire chewed through by the rats and earn 400 pesos or $8 by just reconnecting the wires.</p>
+          <p>I have a degree in Computer Engineering which also means that my neighbors think that I can repair their broken device and appliances. One time I fixed a fridge with a wire chewed through by the rats and earned 400 pesos (about $8) by just reconnecting the wires.</p>
 
-          <p>I like to solving problems and building things specialy if it can make my work and life easier. One time my Mom wan't me to manually pack oil for her store. I create a device that automatically despence the right amount in a push of a button or when I create a Python script that will parse all the transaction, clean and format and save it to excel file for my wife. Automation and making things efficient is my go to when I encounter issues in my daily life, whether thourg physical device mechanical and electronics or through code and software.</p>
+          <p>I enjoy solving problems and building things—especially when they make work and everyday life easier.</p>
 
-          <p>As a kid I don't really like books and open them just to count people in it. Growing older open my eyes to the importance of learning so during college a start reading books about self help, business, programming, science and other technology books.</p>
+          <p>For example, when my mom needed help manually packing oil for her store, I designed and built a device that automatically dispenses the exact amount at the push of a button. In another case, I created a Python script that parses transaction data, cleans and formats it, and exports it to organized Excel files for my wife—saving hours of manual work.</p>
+
+          <p>Automation and efficiency are at the core of how I approach problems. Whether it’s a mechanical device or a piece of software, I focus on creating practical solutions that simplify tasks and improve workflows.</p>
+
+          <p>As a kid I don't really like books and only opened them to count people on every page. Growing older opened my eyes to the importance of learning. There's a quote on the book in Grit by Angela Duckworth that says. <i className='font-semibold'>"The root of knowledge is bitter, but the fruit is sweet"</i>. That resonates with me and I believe it is true and everyone should appreciate the importance of reading. I mainly read about self-help, business, programming, science and other technology books.</p>
         </div>
 
         <Image className='items-start justify-self-center rounded-xl rotate-5 order-1 my-7 lg:order-2' src={myphoto} alt='my image' width={400} />

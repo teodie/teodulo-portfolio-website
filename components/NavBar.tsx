@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from 'react'
+'use client'
+import { useEffect, useState } from 'react'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 import { useMenu } from '@/utils/ThemeContext'
-import Image from 'next/image'
-import myphoto from '@/assets/images/teodieicon.png'
 
-type NavPropType = {
-  isDarkMode: boolean,
-  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>
-}
 
-const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
+
+const NavBAr = () => {
   const { showMenu, setShowMenu } = useMenu()
   const [isScrolled, setIsScrolled] = useState(false)
 
   const menu = [
-    { name: 'Home', id: '#top' },
-    { name: 'About', id: '#about' },
-    { name: 'Articles', id: '#articles' },
-    { name: 'Projects', id: '#projects' },
+    { name: 'Home', id: '/#top' },
+    { name: 'About', id: '/#about' },
+    { name: 'Blog', id: '/#blog' },
+    { name: 'Projects', id: '/#projects' },
   ]
 
   useEffect(() => {
@@ -29,6 +25,27 @@ const NavBAr = ({ isDarkMode, setIsDarkMode }: NavPropType) => {
       }
     })
   }, [])
+
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (localStorage.theme === "dark" || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme)').matches)) {
+      setIsDarkMode(true)
+    } else {
+      setIsDarkMode(false)
+    }
+
+  }, [])
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = ''
+    }
+  }, [isDarkMode])
 
   return (
     <nav className={`fixed flex w-full flex-row justify-between items-center px-5 py-2 md:py-4 z-50 
