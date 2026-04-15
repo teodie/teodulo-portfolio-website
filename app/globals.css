@@ -1,9 +1,42 @@
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  /* 1. Reset code block for line numbers */
+  .prose pre code {
+    @apply grid min-w-full border-0 bg-transparent p-0;
+    counter-reset: line;
+  }
+
+  /* 2. Styling every line */
+  .prose pre [data-line] {
+    @apply px-4 border-l-4 border-l-transparent;
+  }
+
+  /* 3. The Highlighted Lines (The {1-3} fix) */
+  .prose pre [data-highlighted-line] {
+    @apply bg-blue-500/20 border-l-blue-500;
+  }
+
+  /* 4. The Line Numbers */
+  .prose pre [data-line]::before {
+    counter-increment: line;
+    content: counter(line);
+    /* Style numbers: semi-transparent, fixed width */
+    @apply mr-4 inline-block w-4 text-right text-gray-500/50 text-sm content-none;
+  }
+  
+  /* Only show numbers if you want them globally, 
+     otherwise remove 'content-none' above */
+  .prose pre [data-line]::before {
+    content: counter(line);
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #020617;
-
 }
 
 @custom-variant dark (&:where(.dark, .dark *));

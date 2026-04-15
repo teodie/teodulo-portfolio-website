@@ -3,6 +3,8 @@ import "./globals.css";
 import localFont from "next/font/local"
 import { Outfit, Ovo, Inter } from "next/font/google"
 import MenuProvider from "@/utils/ThemeContext";
+import NavBAr from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export const rondbox = localFont({
   src: '../assets/fonts/RondBox-Regular.woff2',
@@ -42,11 +44,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" className="scroll-smooth dark">
       <body className={`${rondbox.variable} ${ovo.variable} ${outfit.variable} ${inter.variable} dark:bg-foreground dark:text-background antialiased  h-dvh `} >
         <MenuProvider>
+          <NavBAr />
           {children}
+          <Footer />
         </MenuProvider>
       </body>
     </html>

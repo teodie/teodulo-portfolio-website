@@ -1,0 +1,77 @@
+import fs from 'fs'
+import path from 'path'
+import { getFrontmatter } from "next-mdx-remote-client/utils";
+import { Frontmatter, PostMap } from '@/types';
+import { MDXFOLDER } from '@/constants';
+
+
+export const getSourceSync = (mdxFilename: string) => {
+  console.log({ mdxFilename })
+  const mdxFullPath = path.join(process.cwd(), MDXFOLDER, mdxFilename)
+
+  return fs.readFileSync(mdxFullPath, "utf8");
+};
+
+export const getMdxFileList = () => {
+  const mdxFolder = path.join(process.cwd(), MDXFOLDER)
+
+  if (!fs.existsSync(mdxFolder)) {
+    console.log(`Mdx folder: ${mdxFolder} don't exist!`)
+    return
+  }
+
+  const mdxFileList = fs.readdirSync(mdxFolder)
+  return mdxFileList
+}
+
+export const getAllFrontmatter = () => {
+  const mdxFiles = getMdxFileList()
+
+  const mdxSourceList = mdxFiles?.map((mdxFilename) => {
+    const mdxFilePath = path.join(process.cwd(), MDXFOLDER, mdxFilename)
+    return fs.readFileSync(mdxFilePath, "utf-8")
+  })
+
+  const frontmatters = mdxSourceList?.map((mdxRawText) => {
+    const frontmatter = getFrontmatter<Frontmatter>(mdxRawText).frontmatter
+    return frontmatter
+  })
+
+
+  return frontmatters
+}
+
+export const getAllFrontmatterWithFilename = () => {
+  const mdxFiles = getMdxFileList()
+  const fnList: Frontmatter[] = []
+
+  mdxFiles?.map((mdxFilename) => {
+    const mdxFilePath = path.join(process.cwd(), MDXFOLDER, mdxFilename)
+
+    const source = fs.readFileSync(mdxFilePath, "utf-8")
+
+    const frontmatter = getFrontmatter<Frontmatter>(source).frontmatter
+
+    fnList.push({...frontmatter, filename: mdxFilename.replace(/\.mdx?$/, "")})
+  })
+
+  return fnList
+}
+
+export const getPostMap = async () => {
+  const mdxFileList = getMdxFileList()
+  const postMap: PostMap = {}
+
+  mdxFileList?.forEach((mdxfile) => {
+    const source = getSourceSync(mdxfile)
+
+    const frontmatter = getFrontmatter<Frontmatter>(source).frontmatter
+
+    if (!frontmatter.slug) throw new Error(`🚨 BUILD FAILED: The file "${mdxfile}" is missing a 'slug' in its frontmatter. Please add one to continue.`)
+
+    postMap[frontmatter.slug] = mdxfile;
+  })
+
+  return postMap
+
+}
