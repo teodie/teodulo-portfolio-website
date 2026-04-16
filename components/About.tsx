@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import myphoto from '@/assets/images/teodulo.png'
 

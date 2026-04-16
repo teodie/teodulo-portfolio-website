@@ -3,6 +3,7 @@ import path from 'path'
 import { getFrontmatter } from "next-mdx-remote-client/utils";
 import { Frontmatter, PostMap } from '@/types';
 import { MDXFOLDER } from '@/constants';
+import { readingTime, ReadingTime } from 'reading-time-estimator';
 
 
 export const getSourceSync = (mdxFilename: string) => {
@@ -24,23 +25,6 @@ export const getMdxFileList = () => {
   return mdxFileList
 }
 
-export const getAllFrontmatter = () => {
-  const mdxFiles = getMdxFileList()
-
-  const mdxSourceList = mdxFiles?.map((mdxFilename) => {
-    const mdxFilePath = path.join(process.cwd(), MDXFOLDER, mdxFilename)
-    return fs.readFileSync(mdxFilePath, "utf-8")
-  })
-
-  const frontmatters = mdxSourceList?.map((mdxRawText) => {
-    const frontmatter = getFrontmatter<Frontmatter>(mdxRawText).frontmatter
-    return frontmatter
-  })
-
-
-  return frontmatters
-}
-
 export const getAllFrontmatterWithFilename = () => {
   const mdxFiles = getMdxFileList()
   const fnList: Frontmatter[] = []
@@ -49,10 +33,11 @@ export const getAllFrontmatterWithFilename = () => {
     const mdxFilePath = path.join(process.cwd(), MDXFOLDER, mdxFilename)
 
     const source = fs.readFileSync(mdxFilePath, "utf-8")
+    const readingTimeInText = readingTime(source, { wordsPerMinute: 100 }).text
 
     const frontmatter = getFrontmatter<Frontmatter>(source).frontmatter
 
-    fnList.push({...frontmatter, filename: mdxFilename.replace(/\.mdx?$/, "")})
+    fnList.push({ ...frontmatter, filename: mdxFilename.replace(/\.mdx?$/, ""), reading_time: readingTimeInText })
   })
 
   return fnList

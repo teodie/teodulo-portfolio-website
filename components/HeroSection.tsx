@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import { icons, profile } from '@/assets/assets'
 import { quoates } from '@/utils/BookQuotes'
