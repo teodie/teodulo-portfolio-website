@@ -1,6 +1,4 @@
 
-import Image from 'next/image'
-
 function Footer() {
   return (
     <div className='mt-20'>
@@ -23,7 +21,7 @@ function Footer() {
             <a href="https://www.linkedin.com/in/teodulosoriano/" target='_blank'>Linkedin</a>
           </li>
           <li>
-            <a href="#" target='_blank'>Indeed</a>
+            <a href="https://www.facebook.com/teodulo.soriano/" target='_blank'>Facebook</a>
           </li>
         </ul>
       </div>
