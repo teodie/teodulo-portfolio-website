@@ -1,34 +1,45 @@
-import { evaluate, MDXRemote, MDXRemoteOptions } from 'next-mdx-remote-client/rsc';
+import { MDXRemote } from 'next-mdx-remote-client/rsc';
 import { getPostMap, getSourceSync } from '@/utils/file';
 import { getMdxOptions } from '@/utils/mdxOptions';
+import { Metadata } from 'next/types';
+import { getFrontMatter } from '@/utils/file';
+
+
 
 type PageProps = {
   params: Promise<{ slug: string }>;
 }
 
-// TODO openGraph
-// export async function generateMetadata({ params }: Props): Promise<Metadata> {
-//   const { slug } = await params;
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
 
-//   return {
-//     title: "My Hello World Post",
-//     openGraph: {
-//       title: "My Hello World Post",
-//       description: "A deep dive into my first MDX blog.",
-//       url: `https://myblog.com{slug}`,
-//       siteName: "My Tech Blog",
-//       images: [
-//         {
-//           url: "https://myblog.com", // The image people see on social media
-//           width: 1200,
-//           height: 630,
-//         },
-//       ],
-//       locale: "en_US",
-//       type: "article",
-//     },
-//   };
-// }
+  const postMap = await getPostMap()
+  const mdxFile = postMap[slug]
+  const source = getSourceSync(mdxFile)
+  const blog = getFrontMatter(source)
+
+  console.log(mdxFile)
+  const ogImage = `/blog/${mdxFile.replace(/\.mdx?$/, "")}/thumbnail.png`
+
+  return {
+    title: blog.front_matter_title,
+    openGraph: {
+      title: blog.front_matter_title,
+      description: blog.summary,
+      url: `https://myblog.com/${slug}`,
+      siteName: "teodulo",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+        },
+      ],
+      locale: "en_US",
+      type: "article",
+    },
+  };
+}
 
 export const generateStaticParmas = async () => {
   const postMap = await getPostMap()
@@ -44,7 +55,6 @@ const Post = async ({ params }: PageProps) => {
   const postMap = await getPostMap()
   const mdxFile = postMap[slug]
 
-  console.log(mdxFile)
   const source = getSourceSync(mdxFile)
   const options = getMdxOptions(source)
 

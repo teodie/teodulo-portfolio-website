@@ -34,10 +34,17 @@ export const outfit = Outfit({
   display: 'swap'
 })
 
+
 export const metadata: Metadata = {
   title: "Teodulo Soriano",
   description: "Teodulo Soriano Portfolio",
-};
+
+  metadataBase: new URL(
+    process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000'
+      : 'https://teodulo.website'
+  ),
+}
 
 export default function RootLayout({
   children,

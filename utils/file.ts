@@ -43,6 +43,13 @@ export const getAllFrontmatterWithFilename = () => {
   return fnList
 }
 
+export const getFrontMatter = (source: string) => {
+
+  const fmatter = getFrontmatter<Frontmatter>(source).frontmatter
+
+  return fmatter
+}
+
 export const getPostMap = async () => {
   const mdxFileList = getMdxFileList()
   const postMap: PostMap = {}
