@@ -11,7 +11,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 1,
   }
 
-  const blogMap = (blogPostList || []).map((mdxFilename) => {
+  const blogMap = {
+    url: `${baseUrl}/blog`,
+    priority: 0.9,
+  }
+
+  const blogPostMap = (blogPostList || []).map((mdxFilename) => {
     return {
       url: `${baseUrl}/${mdxFilename.replace(/\.mdx?$/, "")}`,
       priority: 0.8,
@@ -20,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     heroMap,
-    ...blogMap
+    blogMap,
+    ...blogPostMap
   ]
 }
