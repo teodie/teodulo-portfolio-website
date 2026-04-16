@@ -44,18 +44,21 @@ const HeroSection = () => {
         </div>
 
         <div className='mt-4 flex flex-row justify-center space-x-5'>
-          <div>
+          <a href='https://www.linkedin.com/in/teodulosoriano/' 
+          target='_blank'
+          className='hover:scale-[1.05] transition duration-500'>
             <Image alt='linkedin' src={icons.linkedin} width={50} />
-          </div>
-          <div>
+          </a>
+          <a href='https://github.com/teodie' 
+          target='_blank'
+          className='hover:scale-[1.05] transition duration-500'>
             <Image alt='github' src={icons.github} width={50} />
-          </div>
-          <div>
-            <Image alt='instagram' src={icons.instagram} width={50} />
-          </div>
-          <div>
+          </a>
+          <a href='https://www.facebook.com/teodulo.soriano/' 
+          target='_blank'
+          className='hover:scale-[1.05] transition duration-500'>
             <Image alt='facebook' src={icons.facebook} width={50} />
-          </div>
+          </a>
         </div>
 
       </div>
