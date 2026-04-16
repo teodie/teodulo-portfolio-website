@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: blog.front_matter_title,
       description: blog.summary,
-      url: `https://myblog.com/${slug}`,
+      url: `/${slug}`,
       siteName: "teodulo",
       images: [
         {
