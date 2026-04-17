@@ -1,6 +1,5 @@
 'use client'
-import { Pause } from 'lucide-react'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 
 const Projects = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
