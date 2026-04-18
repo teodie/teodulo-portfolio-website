@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 const HeroSection = () => {
   const [quoateIndex, setQuoateIndex] = useState(0)
 
-  const generateRandomNumberUpTo = (max : number) => {
+  const generateRandomNumberUpTo = (max: number) => {
     return Math.floor(Math.random() * max)
   }
   useEffect(() => {
@@ -15,6 +15,18 @@ const HeroSection = () => {
     const randomNumber = generateRandomNumberUpTo(maxIndex)
     setQuoateIndex(randomNumber)
   }, [])
+
+  const mainImage = [
+    { alt: "left profile", src: profile.left },
+    { alt: "middle profile", src: profile.middle },
+    { alt: "right profile", src: profile.right },
+  ]
+
+  const socialIcons = [
+    { href: "https://www.linkedin.com/in/teodulosoriano/", alt: "linkedin", src: icons.linkedin },
+    { href: "https://github.com/teodie", alt: "github", src: icons.github },
+    { href: "https://www.facebook.com/teodulo.soriano/", alt: "facebook", src: icons.facebook },
+  ]
 
   return (
     <div id='#home' className='px-10 flex flex-col-reverse items-center gap-5 text-center pt-10 md:pt-20
@@ -30,37 +42,27 @@ const HeroSection = () => {
       </div>
 
       <div className='e flex flex-col w-56 md:w-3xl items-center'>
-
         <div className='flex flex-row gap-2 items-center mt-8'>
-          <div>
-            <Image alt='left profile' src={profile.left} priority />
-          </div>
-          <div>
-            <Image alt='middle profile' src={profile.middle} priority />
-          </div>
-          <div>
-            <Image alt='right profile' src={profile.right} priority />
-          </div>
+          {
+            mainImage.map((image) => (
+              <div>
+                <Image alt={image.alt} src={image.src} priority />
+              </div>
+            ))
+          }
         </div>
 
         <div className='mt-4 flex flex-row justify-center space-x-5'>
-          <a href='https://www.linkedin.com/in/teodulosoriano/' 
-          target='_blank'
-          className='hover:scale-[1.05] transition duration-500'>
-            <Image alt='linkedin' src={icons.linkedin} width={50} />
-          </a>
-          <a href='https://github.com/teodie' 
-          target='_blank'
-          className='hover:scale-[1.05] transition duration-500'>
-            <Image alt='github' src={icons.github} width={50} />
-          </a>
-          <a href='https://www.facebook.com/teodulo.soriano/' 
-          target='_blank'
-          className='hover:scale-[1.05] transition duration-500'>
-            <Image alt='facebook' src={icons.facebook} width={50} />
-          </a>
+          {
+            socialIcons.map((icon) => (
+              <a href={icon.href}
+                target='_blank'
+                className='hover:scale-[1.05] transition duration-500'>
+                <Image alt={icon.alt} src={icon.src} width={50} />
+              </a>
+            ))
+          }
         </div>
-
       </div>
     </div>
   )
