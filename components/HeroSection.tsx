@@ -45,7 +45,7 @@ const HeroSection = () => {
         <div className='flex flex-row gap-2 items-center mt-8'>
           {
             mainImage.map((image) => (
-              <div>
+              <div key={image.alt}>
                 <Image alt={image.alt} src={image.src} priority />
               </div>
             ))
@@ -55,7 +55,7 @@ const HeroSection = () => {
         <div className='mt-4 flex flex-row justify-center space-x-5'>
           {
             socialIcons.map((icon) => (
-              <a href={icon.href}
+              <a key={icon.alt} href={icon.href}
                 target='_blank'
                 className='hover:scale-[1.05] transition duration-500'>
                 <Image alt={icon.alt} src={icon.src} width={50} />

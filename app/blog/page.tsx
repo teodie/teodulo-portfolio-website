@@ -15,19 +15,18 @@ const BlogPage = () => {
   return (
     <section className='pt-20  max-w-400 mx-auto px-10'>
 
-      <div className='grid grid-cols-5 grid-rows-6 gap-4'>
-        <h1 className="text-5xl mt-5 mb-10 font-bold col-span-full self-start text-center ">Latest Writings</h1>
+      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+        <h1 className="text-5xl mt-5 mb-10 font-bold text-center col-span-full ">Latest Writings</h1>
         {
           frontMatterList?.map((blog, index) => (
             <a
               href={`/blog/${blog.slug}`} key={index}
               className="
-              nth-2:col-span-3 nth-2:row-span-6
-              nth-3:col-span-2 nth-3:row-span-3
-              nth-4:col-span-2 nth-4:row-span-3
+              inline-block
+              mb-7
               "
             >
-              <div className="relative overflow-hidden rounded-3xl h-full">
+              <div className="relative overflow-hidden rounded-md lg:rounded-xl h-40  lg:h-60">
                 <Image src={`/blog/${blog.filename}/thumbnail.png`} alt={`${blog.filename} thumbnail`} fill className="object-cover object-left" />
               </div>
               <h3 className="text-2xl mt-2">{blog.front_matter_title}</h3>
